@@ -3,32 +3,7 @@
 This document presents the full evolution of **RescueNet**, an aerial-imagery segmentation model designed to detect and classify post-disaster features such as damaged buildings, flooded areas, roads, and vehicles.  
 The project began as a classroom prototype during the **MIT Beaver Works Summer Institute (BWSI)** and developed into a mature, research-grade system over ten iterative versions between July and October 2025.
 
----
-
-## Understanding the Foundations
-
-Before diving into the version history, it may be useful to understand the principles behind how the model learns.  
-RescueNet, like most modern computer vision systems, is built on deep learning — a form of machine learning where a neural network discovers patterns from data rather than following explicit instructions.
-
-A **neural network** consists of interconnected mathematical “neurons.” Each neuron processes small fragments of information, and collectively they can recognize complex visual structures. During **training**, the model is shown many satellite images paired with “masks” that mark what each pixel represents — water, building, road, and so on. Over time, it adjusts millions of internal parameters to minimize mistakes.
-
-The level of error is measured by a **loss function**. Think of it as a numerical score showing how far the model’s guesses are from the correct answers. A lower loss means better predictions. Several specialized losses are used in this project:
-- **Cross-Entropy (CE):** measures general classification accuracy.
-- **Lovasz Loss:** sharpens object boundaries for cleaner segmentation.
-- **Focal Loss:** emphasizes rare or difficult examples so the model doesn’t ignore them.
-- **OHEM (Online Hard Example Mining):** selects the hardest pixels for the model to learn from.
-
-To reduce this loss, an **optimizer** such as **AdamW** fine-tunes the network’s internal weights after each iteration. The **learning rate** determines how aggressively these updates happen — too high, and learning becomes unstable; too low, and it stagnates.  
-A **scheduler** dynamically adjusts this rate during training; here, a *cosine schedule* gradually lowers it for smoother convergence.
-
-The model architecture combines two key components:
-- **ResNet-50 Backbone:** A pre-trained feature extractor that identifies textures, edges, and shapes from input images.  
-- **DeepLabV3+:** A segmentation network that classifies each pixel using context from nearby regions, producing a color-coded map of the scene.
-
-Additional elements such as **automatic mixed precision (AMP)**, which uses a mix of 16-bit and 32-bit operations to save memory, and **EMA (Exponential Moving Average)**, which smooths model updates, improve both performance and stability.
-
-These fundamentals — data, architecture, loss, and optimization — shaped the evolution of RescueNet across all ten versions documented below.
-
+It would be recommended to read the documentation to learn about my journey with this model before diving into this version history.
 ---
 
 ## Overview
