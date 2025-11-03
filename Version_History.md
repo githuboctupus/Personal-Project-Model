@@ -1,15 +1,15 @@
 # RescueNet Segmentation Project — Full Development History (BWSI → Oct 2025)
 
-This document presents the full evolution of **RescueNet**, an aerial-imagery segmentation model designed to detect and classify post-disaster features such as damaged buildings, flooded areas, roads, and vehicles.  
-The project began as a classroom prototype during the **MIT Beaver Works Summer Institute (BWSI)** and developed into a mature, research-grade system over ten iterative versions between July and October 2025.
+This document outlines the entire development process of **RescueNet**, an aerial-image segmentation model designed to detect and classify post-disaster features such as damaged structures, flooded areas, roadways, and vehicles.
+Originally developed as a classroom prototype at the MIT Beaver Works Summer Institute (BWSI), it underwent ten iterations from July to October 2025, transforming into a refined, research-grade system.
 
 It would be recommended to read the documentation to learn about my journey with this model before diving into this version history.
 ---
 
 ## Overview
 
-**Objective:** Classify every pixel in post-disaster satellite imagery into 11 semantic categories, including water, roads, buildings (by damage level), vehicles, trees, and pools.  
-This process, known as **semantic segmentation**, converts raw aerial images into structured disaster-mapping data.
+**Objective:** To categorize each pixel in satellite images taken after a disaster into 11 distinct semantic categories, such as water, roads, buildings (classified by damage level), vehicles, trees, and pools.
+This procedure, referred to as **semantic segmentation**, transforms unprocessed aerial images into organized data for disaster mapping.
 
 **Dataset:** RescueNet (≈22 GB ZIP, includes high-resolution aerial photos and corresponding labeled masks)
 
@@ -32,8 +32,7 @@ This process, known as **semantic segmentation**, converts raw aerial images int
 
 **Environment:** Google Colab Free Tier (T4/P100 GPU, 12 GB VRAM)
 
-The first version was built during the Beaver Works Summer Institute “Remote Sensing for Disaster Response” course.  
-It used **DeepLabV3+** with a **ResNet-50** backbone pretrained on ImageNet and was trained using basic augmentations and a single Cross-Entropy loss.
+The initial version was developed as part of the Beaver Works Summer Institute's course titled "Remote Sensing for Disaster Response." It employed **DeepLabV3+** with a **ResNet-50** backbone that was pretrained on ImageNet, and it was trained utilizing fundamental augmentations along with a single Cross-Entropy loss.
 
 **Configuration**
 - Dataset manually unzipped to `/content/`
@@ -239,4 +238,4 @@ All improvements were merged into a single, unified training and inference pipel
 ---
 
 **Summary:**  
-Through ten iterations, RescueNet evolved from a fragile prototype into a robust and reproducible disaster-response model. Each revision—whether improving data handling, optimization, or evaluation—brought it closer to real-world applicability.
+Over the course of ten iterations, RescueNet transformed from a delicate prototype into a strong and replicable disaster-response framework. Each modification - be it in data management, optimization, or assessment - advanced its relevance to practical applications.
