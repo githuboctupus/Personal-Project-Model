@@ -239,4 +239,4 @@ All improvements were merged into a single, unified training and inference pipel
 ---
 
 **Summary:**  
-Through ten iterations, RescueNet evolved from a fragile prototype into a robust and reproducible disaster-response model. Each revision—whether improving data handling, optimization, or evaluation—brought it closer to real-world applicability, demonstrating how careful iteration and disciplined engineering can transform a student project into a professional-grade system.
+Through ten iterations, RescueNet evolved from a fragile prototype into a robust and reproducible disaster-response model. Each revision—whether improving data handling, optimization, or evaluation—brought it closer to real-world applicability.
